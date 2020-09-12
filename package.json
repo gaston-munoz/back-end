@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha spec/*.js",
+    "test:cover": "nyc --report=html mocha spec/*.js",
     "after-30-days": "node src/"
   },
   "repository": {
@@ -16,6 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^4.0.1"
+    "mocha": "^4.0.1",
+    "nyc": "^15.1.0"
   }
 }
