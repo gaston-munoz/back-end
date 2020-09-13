@@ -14,6 +14,8 @@ En esta rama agregue lo necesario para montar un pequeño servidor que provea a 
 
 ## Para correr con front end:
 - Clonar este repo y el de Front end
-- Ejecutar npm install en ambos
-- En este repo situarse en la rama with-server y **ejecutar npm start** o **npm run dev**
+- Ejecutar en este **git fetch origin with-server:with-server**
+- En este repo situarse en la rama with-server: **git checkout with-server**
+- ejecutar **npm install**
+- ejecutar **npm start** o **npm run dev**
 - En el repo de front end ejecutar **npm start**
