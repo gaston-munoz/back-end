@@ -17,7 +17,7 @@ class Product {
 
 class MegaCoverage extends Product {
   constructor(sellIn) {
-      super('Mega Coverage <Class Self>', sellIn, 80);
+      super('Mega Coverage', sellIn, 80);
   }
 
   updatePrice() { 
@@ -27,8 +27,9 @@ class MegaCoverage extends Product {
 
 class SuperSale extends Product {
   constructor(sellIn, price) {
-      let ctrlPriceS = price <= 50 ? price : 50;
-      super('Super Sale <Class Self>', sellIn, ctrlPriceS);
+    if(price > 50) price = 50;
+    else if(price < 0) price = 0;
+    super('Super Sale', sellIn, price);
   }
 
   updatePrice() {
@@ -43,8 +44,9 @@ class SuperSale extends Product {
 
 class FullCoverage extends Product {
   constructor(sellIn, price) {
-    let ctrlPriceS = price <= 50 ? price : 50;
-    super('Full Coverage <Class Self>', sellIn, ctrlPriceS);
+    if(price > 50) price = 50;
+    else if(price < 0) price = 0;
+    super('Full Coverage', sellIn, price);
   }
 
   updatePrice() {
@@ -55,8 +57,9 @@ class FullCoverage extends Product {
 
 class SpecialFullCoverage extends Product {
   constructor(sellIn, price) {
-    let ctrlPriceS = price <= 50 ? price : 50;
-    super('Special Full Coverage <Class Self>', sellIn, ctrlPriceS);
+    if(price > 50) price = 50;
+    else if(price < 0) price = 0;
+    super('Special Full Coverage', sellIn, price);
   }
 
   updatePrice() {
