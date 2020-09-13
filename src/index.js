@@ -35,7 +35,8 @@ const productsAtDayZero = [
     let temp = {};
     temp.day = i;
     temp.products = [];
-    carInsurance.updateProducts().forEach(prod => { temp.products.push(prod) });
+    carInsurance.updateProducts();
+    temp.products = JSON.parse(JSON.stringify(carInsurance.products))
     projections.push(temp);
   }
 
