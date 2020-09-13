@@ -17,7 +17,14 @@ const productsAtDayZero = [
     new SpecialFullCoverage(10, 60),
     new SpecialFullCoverage(5, 49),
     new SuperSale(3, 20),
+    new SpecialFullCoverage(7, 20),
+
   ];
+
+  let products = JSON.parse(JSON.stringify(productsAtDayZero))
+  // let products = productsAtDayZero.slice();
+
+  const projections = [];
   
   const carInsurance = new CarInsurance(productsAtDayZero);
   const productPrinter = function (product) {
@@ -25,8 +32,12 @@ const productsAtDayZero = [
   };
   
   for (let i = 1; i <= 30; i += 1) {
-    console.log(`Day ${i}`);
-    console.log('name, sellIn, price');
-    carInsurance.updateProducts().forEach(productPrinter);
-    console.log('');
+    let temp = {};
+    temp.day = i;
+    temp.products = [];
+    carInsurance.updateProducts().forEach(prod => { temp.products.push(prod) });
+    projections.push(temp);
   }
+
+
+  module.exports = { products, projections };
